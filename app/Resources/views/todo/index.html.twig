@@ -1,0 +1,21 @@
+{% extends 'super.html.twig' %}
+
+{% block body %}
+    <h1>Todo Index</h1>
+    <table class="table table-responsive">
+        <tr>
+            <th>Id</th>
+            <th>Descrição</th>
+        </tr>
+        {% for item in list %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
